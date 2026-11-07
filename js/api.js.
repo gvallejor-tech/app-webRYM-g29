@@ -1,1 +1,26 @@
-
+const API_URL = 'https://rickandmortyapi.com/api/character'; 
+async function cargarPersonajes() {  
+  try {    
+      const response = await fetch(API_URL);   
+      const data = await response.json();    
+      // Exigencia de la guía: mínimo 16 personajes    const personajes = data.results.slice(0, 16);
+      const container = document.getElementById('personajes-container');    
+      if (!container) return;
+      container.innerHTML = '';    
+      personajes.forEach(personaje => {      
+        container.innerHTML += `        
+        <div class="card-personaje">          
+          <img src="${personaje.image}" alt="${personaje.name}">         
+          <h3>${personaje.name}</h3>          
+          <p><strong>Estado:</strong> ${personaje.status}</p>          
+          <p><strong>Especie:</strong> ${personaje.species}</p>          
+          <p><strong>Género:</strong> ${personaje.gender}</p>         
+          <p><strong>Origen:</strong> ${personaje.origin.name}</p>
+         </div>      
+        `;    
+      });  
+    } catch (error) {    
+      console.error('Error al obtener personajes:', error);  
+    } 
+  } 
+  document.addEventListener('DOMContentLoaded', cargarPersonajes);
