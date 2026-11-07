@@ -1,0 +1,126 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #272b33;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #202329;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.logo {
+    height: 45px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-item {
+    color: #00b5cc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #97ce4c;
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    color: #97ce4c;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #00b5cc;
+    margin-bottom: 2rem;
+}
+
+/* GRILLAS RESPONSIVAS */
+.team-grid, .characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* TARJETAS */
+.card-integrante, .card-personaje {
+    background-color: #3c3e44;
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: 1px solid #4f535c;
+    transition: transform 0.2s;
+}
+
+.card-integrante:hover, .card-personaje:hover {
+    transform: translateY(-5px);
+    border-color: #97ce4c;
+}
+
+.card-integrante img, .card-personaje img {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.card-integrante h3, .card-personaje h3 {
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.card-integrante p, .card-personaje p {
+    color: #9e9e9e;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
+}
+
+.card-integrante p strong, .card-personaje p strong {
+    color: #00b5cc;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #202329;
+    text-align: center;
+    padding: 1rem;
+    color: #9e9e9e;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
